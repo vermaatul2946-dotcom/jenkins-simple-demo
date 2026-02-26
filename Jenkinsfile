@@ -1,13 +1,12 @@
 pipeline {
   agent any
-
   stages {
-     stage('Clone') {
-       steps {
-         git url: 'https://github.com/vermaatul2946-dotcom/jenkins-simple-demo.git'
+    stage('clone') {
+      steps {
+        git url: 'https://github.com/vermaatul2946-dotcom/jenkins-simple-demo.git'
             branch: 'main'
-        }
-  }
+      }
+    }
     stage('Run Script') {
       steps {
         sh 'chmod +x script.sh'
@@ -15,5 +14,4 @@ pipeline {
       }
     }
   }
-}
-       
+}   
